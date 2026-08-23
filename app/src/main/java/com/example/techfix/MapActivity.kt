@@ -23,8 +23,11 @@ class MapActivity : AppCompatActivity() {
 
         btnColomboMap.setOnClickListener {
 
+            // Colombo, Sri Lanka
             openMap(
-                "TechFix Colombo, Sri Lanka"
+                6.9271,
+                79.8612,
+                "TechFix Colombo"
             )
         }
 
@@ -38,8 +41,11 @@ class MapActivity : AppCompatActivity() {
 
         btnGalleMap.setOnClickListener {
 
+            // Galle, Sri Lanka
             openMap(
-                "TechFix Galle, Sri Lanka"
+                6.0329,
+                80.2168,
+                "TechFix Galle"
             )
         }
     }
@@ -49,18 +55,20 @@ class MapActivity : AppCompatActivity() {
     // OPEN GOOGLE MAPS
     // ==========================================
 
-    private fun openMap(location: String) {
+    private fun openMap(
+        latitude: Double,
+        longitude: Double,
+        label: String
+    ) {
 
-        val uri =
-            Uri.parse(
-                "geo:0,0?q=${Uri.encode(location)}"
-            )
+        val uri = Uri.parse(
+            "geo:$latitude,$longitude?q=$latitude,$longitude($label)"
+        )
 
-        val intent =
-            Intent(
-                Intent.ACTION_VIEW,
-                uri
-            )
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            uri
+        )
 
         intent.setPackage(
             "com.google.android.apps.maps"
@@ -72,19 +80,18 @@ class MapActivity : AppCompatActivity() {
 
         } catch (exception: Exception) {
 
-            // Google Maps is not installed.
-            // Open the location using a web browser.
+            // ==========================================
+            // FALLBACK TO WEB GOOGLE MAPS
+            // ==========================================
 
-            val webUri =
-                Uri.parse(
-                    "https://www.google.com/maps/search/?api=1&query=${Uri.encode(location)}"
-                )
+            val webUri = Uri.parse(
+                "https://www.google.com/maps/search/?api=1&query=$latitude,$longitude"
+            )
 
-            val webIntent =
-                Intent(
-                    Intent.ACTION_VIEW,
-                    webUri
-                )
+            val webIntent = Intent(
+                Intent.ACTION_VIEW,
+                webUri
+            )
 
             try {
 

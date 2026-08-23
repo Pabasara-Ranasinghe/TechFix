@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TechFix Brand Colors -->
+    <color name="techfix_primary">#F13E93</color>
+    <color name="techfix_secondary">#F891BB</color>
+    <color name="techfix_light_pink">#F9D0CD</color>
+    <color name="techfix_light_yellow">#FAFFCB</color>
+
+    <!-- Neutral Colors -->
+    <color name="techfix_text">#252525</color>
+    <color name="techfix_secondary_text">#6B6B6B</color>
+    <color name="techfix_background">#FAFAFA</color>
+    <color name="techfix_white">#FFFFFF</color>
+
+</resources>

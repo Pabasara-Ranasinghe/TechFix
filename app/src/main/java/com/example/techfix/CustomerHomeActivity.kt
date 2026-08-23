@@ -220,7 +220,13 @@ class CustomerHomeActivity : AppCompatActivity() {
 
         btnNavMap.setOnClickListener {
 
-            // Map will be connected next.
+            val intent =
+                Intent(
+                    this,
+                    MapActivity::class.java
+                )
+
+            startActivity(intent)
         }
 
 

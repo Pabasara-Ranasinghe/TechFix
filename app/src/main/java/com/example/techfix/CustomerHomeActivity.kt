@@ -1,115 +1,239 @@
 package com.example.techfix
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 
 class CustomerHomeActivity : AppCompatActivity() {
-
-    private lateinit var auth: FirebaseAuth
-    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Connect to customer home layout
         setContentView(R.layout.activity_customer_home)
 
-        // Initialize Firebase
-        auth = FirebaseAuth.getInstance()
-        firestore = FirebaseFirestore.getInstance()
 
-        // Connect UI elements
-        val tvHomeWelcome =
-            findViewById<TextView>(R.id.tvHomeWelcome)
+        // ==========================================
+        // HERO - BOOK A REPAIR
+        // ==========================================
 
-        val btnServices =
-            findViewById<Button>(R.id.btnServices)
+        val btnHeroBookRepair =
+            findViewById<Button>(R.id.btnHeroBookRepair)
 
-        val btnAppointments =
-            findViewById<Button>(R.id.btnAppointments)
+        btnHeroBookRepair.setOnClickListener {
 
-        val btnHistory =
-            findViewById<Button>(R.id.btnHistory)
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
 
-        val btnBranches =
-            findViewById<Button>(R.id.btnBranches)
-
-        // Get currently logged-in customer
-        val currentUser = auth.currentUser
-
-        if (currentUser != null) {
-
-            // Get customer profile from Firestore
-            firestore.collection("customers")
-                .document(currentUser.uid)
-                .get()
-                .addOnSuccessListener { document ->
-
-                    if (document.exists()) {
-
-                        val name =
-                            document.getString("name")
-
-                        if (!name.isNullOrEmpty()) {
-
-                            tvHomeWelcome.text =
-                                "Welcome, $name!"
-                        }
-                    }
-                }
-                .addOnFailureListener {
-
-                    Toast.makeText(
-                        this,
-                        "Could not load your profile",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+            startActivity(intent)
         }
 
-        // Repair Services
-        btnServices.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "Repair Services coming next",
-                Toast.LENGTH_SHORT
-            ).show()
+        // ==========================================
+        // LAPTOP DIAGNOSTICS - BOOK NOW
+        // ==========================================
+
+        val btnLaptopBookNow =
+            findViewById<Button>(R.id.btnLaptopBookNow)
+
+        btnLaptopBookNow.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            intent.putExtra(
+                "DEVICE_TYPE",
+                "Laptop"
+            )
+
+            startActivity(intent)
         }
 
-        // My Appointments
-        btnAppointments.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "My Appointments coming next",
-                Toast.LENGTH_SHORT
-            ).show()
+        // ==========================================
+        // MOBILE SCREEN REPAIR - BOOK NOW
+        // ==========================================
+
+        val btnMobileBookNow =
+            findViewById<Button>(R.id.btnMobileBookNow)
+
+        btnMobileBookNow.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            intent.putExtra(
+                "DEVICE_TYPE",
+                "Mobile Phone"
+            )
+
+            startActivity(intent)
         }
 
-        // Repair History
-        btnHistory.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "Repair History coming next",
-                Toast.LENGTH_SHORT
-            ).show()
+        // ==========================================
+        // CATEGORY - ALL
+        // ==========================================
+
+        val btnCategoryAll =
+            findViewById<Button>(R.id.btnCategoryAll)
+
+        btnCategoryAll.setOnClickListener {
+
+            // All services are already displayed.
         }
 
-        // Branches & Locations
-        btnBranches.setOnClickListener {
 
-            Toast.makeText(
-                this,
-                "Branches & Locations coming next",
-                Toast.LENGTH_SHORT
-            ).show()
+        // ==========================================
+        // CATEGORY - PHONES
+        // ==========================================
+
+        val btnCategoryPhones =
+            findViewById<Button>(R.id.btnCategoryPhones)
+
+        btnCategoryPhones.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            intent.putExtra(
+                "DEVICE_TYPE",
+                "Mobile Phone"
+            )
+
+            startActivity(intent)
+        }
+
+
+        // ==========================================
+        // CATEGORY - PC / MAC
+        // ==========================================
+
+        val btnCategoryPC =
+            findViewById<Button>(R.id.btnCategoryPC)
+
+        btnCategoryPC.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            intent.putExtra(
+                "DEVICE_TYPE",
+                "Laptop"
+            )
+
+            startActivity(intent)
+        }
+
+
+        // ==========================================
+        // CATEGORY - SCREENS
+        // ==========================================
+
+        val btnCategoryScreens =
+            findViewById<Button>(R.id.btnCategoryScreens)
+
+        btnCategoryScreens.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            startActivity(intent)
+        }
+
+
+        // ==========================================
+        // CATEGORY - BATTERY
+        // ==========================================
+
+        val btnCategoryBattery =
+            findViewById<Button>(R.id.btnCategoryBattery)
+
+        btnCategoryBattery.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    BookRepairActivity::class.java
+                )
+
+            startActivity(intent)
+        }
+
+
+        // ==========================================
+        // BOTTOM NAVIGATION - HOME
+        // ==========================================
+
+        val btnNavHome =
+            findViewById<Button>(R.id.btnNavHome)
+
+        btnNavHome.setOnClickListener {
+
+            // Already on the home page.
+        }
+
+
+        // ==========================================
+        // BOTTOM NAVIGATION - BOOKINGS
+        // ==========================================
+
+        val btnNavBookings =
+            findViewById<Button>(R.id.btnNavBookings)
+
+        btnNavBookings.setOnClickListener {
+
+            val intent =
+                Intent(
+                    this,
+                    MyBookingsActivity::class.java
+                )
+
+            startActivity(intent)
+        }
+
+
+        // ==========================================
+        // BOTTOM NAVIGATION - MAP
+        // ==========================================
+
+        val btnNavMap =
+            findViewById<Button>(R.id.btnNavMap)
+
+        btnNavMap.setOnClickListener {
+
+            // Map will be connected next.
+        }
+
+
+        // ==========================================
+        // BOTTOM NAVIGATION - PROFILE
+        // ==========================================
+
+        val btnNavProfile =
+            findViewById<Button>(R.id.btnNavProfile)
+
+        btnNavProfile.setOnClickListener {
+
+            // Profile will be connected next.
         }
     }
 }

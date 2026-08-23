@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    TechFix Management Appointments Screen
+
+    This screen displays all repair appointments
+    submitted by customers.
+
+    Management will later be able to update
+    the status of each appointment.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:background="@color/techfix_white"
+    android:padding="20dp">
+
+
+    <!-- ========================================= -->
+    <!-- HEADER                                    -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvManageAppointmentsTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Manage Appointments"
+        android:textColor="@color/techfix_text"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvManageAppointmentsSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dp"
+
+        android:text="View and manage customer repair requests"
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="14sp" />
+
+
+    <!-- ========================================= -->
+    <!-- APPOINTMENTS LIST                         -->
+    <!-- ========================================= -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvManageAppointments"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="20dp"
+
+        android:layout_weight="1"
+
+        android:clipToPadding="false"
+
+        android:paddingBottom="10dp" />
+
+
+</LinearLayout>

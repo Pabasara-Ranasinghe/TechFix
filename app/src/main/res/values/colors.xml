@@ -3,9 +3,9 @@
 
     <!-- TechFix Brand Colors -->
     <color name="techfix_primary">#F13E93</color>
-    <color name="techfix_secondary">#F891BB</color>
-    <color name="techfix_light_pink">#F9D0CD</color>
-    <color name="techfix_light_yellow">#FAFFCB</color>
+    <color name="techfix_secondary">#F13E93</color>
+    <color name="techfix_light_pink">#F13E93</color>
+    <color name="techfix_light_yellow">#F13E93</color>
 
     <!-- Neutral Colors -->
     <color name="techfix_text">#252525</color>

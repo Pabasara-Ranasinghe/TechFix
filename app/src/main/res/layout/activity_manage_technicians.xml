@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    TechFix Technician Management Screen
+
+    Management can:
+    - View technicians
+    - Add technicians
+    - See technician specialization
+    - See technician availability
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:background="@color/techfix_white"
+    android:padding="20dp">
+
+
+    <!-- ========================================= -->
+    <!-- TITLE                                     -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvTechnicianTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Manage Technicians"
+        android:textColor="@color/techfix_text"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/tvTechnicianSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dp"
+
+        android:text="View and manage TechFix technicians"
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="14sp" />
+
+
+    <!-- ========================================= -->
+    <!-- ADD TECHNICIAN BUTTON                     -->
+    <!-- ========================================= -->
+
+    <Button
+        android:id="@+id/btnAddTechnician"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        android:backgroundTint="@color/techfix_primary"
+
+        android:text="ADD TECHNICIAN"
+        android:textColor="@color/techfix_white"
+        android:textStyle="bold" />
+
+
+    <!-- ========================================= -->
+    <!-- TECHNICIANS LIST                          -->
+    <!-- ========================================= -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTechnicians"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="15dp"
+
+        android:layout_weight="1"
+
+        android:clipToPadding="false"
+
+        android:paddingBottom="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    TechFix Management Dashboard
+
+    This is the main screen for management users.
+
+    Management can access:
+    1. Appointments
+    2. Technicians
+    3. Spare Parts
+    4. Repair Prices
+    5. Payments
+-->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/techfix_white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="24dp">
+
+
+        <!-- ========================================= -->
+        <!-- LOGO                                      -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvManagementLogo"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="TECHFIX"
+            android:textColor="@color/techfix_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- ========================================= -->
+        <!-- TITLE                                     -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvManagementTitle"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:text="Management Dashboard"
+            android:textColor="@color/techfix_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvManagementLogo" />
+
+
+        <!-- ========================================= -->
+        <!-- SUBTITLE                                  -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvManagementSubtitle"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+
+            android:text="Manage TechFix operations"
+            android:textColor="@color/techfix_secondary_text"
+            android:textSize="15sp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvManagementTitle" />
+
+
+        <!-- ========================================= -->
+        <!-- APPOINTMENTS                              -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManageAppointments"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+
+            android:backgroundTint="@color/techfix_primary"
+
+            android:text="MANAGE APPOINTMENTS"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvManagementSubtitle" />
+
+
+        <!-- ========================================= -->
+        <!-- TECHNICIANS                               -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManageTechnicians"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:backgroundTint="@color/techfix_secondary"
+
+            android:text="MANAGE TECHNICIANS"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnManageAppointments" />
+
+
+        <!-- ========================================= -->
+        <!-- SPARE PARTS                               -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManageParts"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:backgroundTint="@color/techfix_secondary"
+
+            android:text="MANAGE SPARE PARTS"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnManageTechnicians" />
+
+
+        <!-- ========================================= -->
+        <!-- REPAIR PRICES                             -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManagePrices"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:backgroundTint="@color/techfix_secondary"
+
+            android:text="MANAGE REPAIR PRICES"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnManageParts" />
+
+
+        <!-- ========================================= -->
+        <!-- PAYMENTS                                  -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManagePayments"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:backgroundTint="@color/techfix_secondary"
+
+            android:text="MANAGE PAYMENTS"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnManagePrices" />
+
+
+        <!-- ========================================= -->
+        <!-- LOGOUT                                    -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnManagementLogout"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+
+            android:backgroundTint="@android:color/darker_gray"
+
+            android:text="LOGOUT"
+            android:textColor="@color/techfix_white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnManagePayments" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

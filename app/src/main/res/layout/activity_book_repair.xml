@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Book Repair Screen
+
+    Customers can:
+    1. Select device type
+    2. Enter device model
+    3. Describe the problem
+    4. Select preferred date
+    5. Select a device image
+    6. Book the repair
+-->
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/techfix_white"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+
+        <!-- ========================================= -->
+        <!-- TECHFIX LOGO                              -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvBookLogo"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="TECHFIX"
+            android:textColor="@color/techfix_primary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!-- ========================================= -->
+        <!-- SCREEN TITLE                              -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvBookTitle"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="30dp"
+
+            android:text="Book a Repair"
+            android:textColor="@color/techfix_text"
+            android:textSize="26sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBookLogo" />
+
+
+        <!-- ========================================= -->
+        <!-- DEVICE TYPE                               -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvDeviceTypeLabel"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="25dp"
+
+            android:text="Device Type"
+            android:textColor="@color/techfix_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvBookTitle" />
+
+
+        <Spinner
+            android:id="@+id/spinnerDeviceType"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDeviceTypeLabel" />
+
+
+        <!-- ========================================= -->
+        <!-- DEVICE MODEL                              -->
+        <!-- ========================================= -->
+
+        <EditText
+            android:id="@+id/etDeviceModel"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:hint="Device model"
+            android:inputType="text"
+            android:padding="12dp"
+
+            android:textColor="@color/techfix_text"
+            android:textColorHint="@color/techfix_secondary_text"
+            android:backgroundTint="@color/techfix_primary"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/spinnerDeviceType" />
+
+
+        <!-- ========================================= -->
+        <!-- PROBLEM DESCRIPTION                        -->
+        <!-- ========================================= -->
+
+        <EditText
+            android:id="@+id/etProblem"
+
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="15dp"
+
+            android:gravity="top"
+
+            android:hint="Describe the problem"
+            android:inputType="textMultiLine"
+
+            android:padding="12dp"
+
+            android:textColor="@color/techfix_text"
+            android:textColorHint="@color/techfix_secondary_text"
+            android:backgroundTint="@color/techfix_primary"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDeviceModel" />
+
+
+        <!-- ========================================= -->
+        <!-- PREFERRED DATE                            -->
+        <!-- ========================================= -->
+
+        <EditText
+            android:id="@+id/etDate"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="15dp"
+
+            android:hint="Preferred date"
+            android:inputType="date"
+
+            android:padding="12dp"
+
+            android:textColor="@color/techfix_text"
+            android:textColorHint="@color/techfix_secondary_text"
+            android:backgroundTint="@color/techfix_primary"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etProblem" />
+
+
+        <!-- ========================================= -->
+        <!-- IMAGE SECTION                             -->
+        <!-- ========================================= -->
+
+        <TextView
+            android:id="@+id/tvDeviceImageLabel"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+
+            android:text="Device Image (Optional)"
+            android:textColor="@color/techfix_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDate" />
+
+
+        <!-- Selected image preview -->
+
+        <ImageView
+            android:id="@+id/ivDeviceImage"
+
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+
+            android:layout_marginTop="10dp"
+
+            android:adjustViewBounds="true"
+            android:background="@color/techfix_light_yellow"
+            android:contentDescription="Selected device image"
+            android:scaleType="centerCrop"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDeviceImageLabel" />
+
+
+        <!-- Select image button -->
+
+        <Button
+            android:id="@+id/btnSelectImage"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="10dp"
+
+            android:backgroundTint="@color/techfix_secondary"
+
+            android:text="SELECT DEVICE IMAGE"
+            android:textColor="@color/techfix_white"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivDeviceImage" />
+
+
+        <!-- ========================================= -->
+        <!-- BOOK REPAIR BUTTON                        -->
+        <!-- ========================================= -->
+
+        <Button
+            android:id="@+id/btnBookRepair"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+
+            android:backgroundTint="@color/techfix_primary"
+
+            android:text="BOOK REPAIR"
+            android:textColor="@color/techfix_white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectImage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

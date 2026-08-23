@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+
+    android:background="@color/techfix_white"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/tvSparePartsTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Manage Spare Parts"
+        android:textColor="@color/techfix_text"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvSparePartsSubtitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="5dp"
+
+        android:text="Manage spare parts and availability"
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnAddSparePart"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+
+        android:backgroundTint="@color/techfix_primary"
+
+        android:text="ADD SPARE PART"
+        android:textColor="@color/techfix_white"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSpareParts"
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="15dp"
+
+        android:layout_weight="1"
+
+        android:clipToPadding="false"
+
+        android:paddingBottom="10dp" />
+
+</LinearLayout>

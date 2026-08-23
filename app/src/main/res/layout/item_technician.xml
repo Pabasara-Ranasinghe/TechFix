@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Individual technician card.
+
+    Management can:
+    - View technician details
+    - Edit technician
+    - Delete technician
+-->
+
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:layout_marginBottom="12dp"
+
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical"
+
+        android:padding="16dp">
+
+
+        <!-- Technician name -->
+
+        <TextView
+            android:id="@+id/tvTechnicianName"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Technician Name"
+            android:textColor="@color/techfix_primary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!-- Specialization -->
+
+        <TextView
+            android:id="@+id/tvTechnicianSpecialization"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="6dp"
+
+            android:text="Specialization: Computer Repair"
+            android:textColor="@color/techfix_text"
+            android:textSize="14sp" />
+
+
+        <!-- Phone -->
+
+        <TextView
+            android:id="@+id/tvTechnicianPhone"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:text="Phone: 0771234567"
+            android:textColor="@color/techfix_secondary_text"
+            android:textSize="14sp" />
+
+
+        <!-- Availability -->
+
+        <TextView
+            android:id="@+id/tvTechnicianAvailability"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="5dp"
+
+            android:text="Availability: Available"
+            android:textColor="@color/techfix_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+
+        <!-- ===================================== -->
+        <!-- ACTION BUTTONS                         -->
+        <!-- ===================================== -->
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="12dp"
+
+            android:orientation="horizontal">
+
+
+            <!-- Edit -->
+
+            <Button
+                android:id="@+id/btnEditTechnician"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_weight="1"
+
+                android:text="EDIT"
+                android:textStyle="bold" />
+
+
+            <!-- Delete -->
+
+            <Button
+                android:id="@+id/btnDeleteTechnician"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="10dp"
+
+                android:layout_weight="1"
+
+                android:text="DELETE"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

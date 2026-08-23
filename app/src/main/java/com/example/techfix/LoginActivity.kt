@@ -8,67 +8,250 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+
+/*
+ * LoginActivity
+ *
+ * Handles login for both:
+ *
+ * 1. Customers
+ * 2. Management
+ *
+ * After successful Firebase Authentication,
+ * the user's role is checked in Firestore.
+ *
+ * CUSTOMER -> CustomerHomeActivity
+ * MANAGER  -> ManagementDashboardActivity
+ */
 
 class LoginActivity : AppCompatActivity() {
 
+    // Firebase Authentication
     private lateinit var auth: FirebaseAuth
+
+    // Firebase Firestore
+    private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Load login screen
         setContentView(R.layout.activity_login)
 
-        // Firebase Authentication
+        // ==========================================
+        // INITIALIZE FIREBASE
+        // ==========================================
+
         auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
-        // Connect UI elements
-        val etEmail = findViewById<EditText>(R.id.etEmail)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
+        // ==========================================
+        // CONNECT UI ELEMENTS
+        // ==========================================
 
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val tvRegister = findViewById<TextView>(R.id.tvRegister)
+        val etEmail =
+            findViewById<EditText>(R.id.etEmail)
 
+        val etPassword =
+            findViewById<EditText>(R.id.etPassword)
+
+        val btnLogin =
+            findViewById<Button>(R.id.btnLogin)
+
+        val tvRegister =
+            findViewById<TextView>(R.id.tvRegister)
+
+        // ==========================================
         // LOGIN BUTTON
+        // ==========================================
+
         btnLogin.setOnClickListener {
 
-            val email = etEmail.text.toString().trim()
-            val password = etPassword.text.toString().trim()
+            // Get email
+            val email =
+                etEmail.text.toString().trim()
 
-            // Check empty fields
+            // Get password
+            val password =
+                etPassword.text.toString().trim()
+
+            // ======================================
+            // VALIDATE EMAIL
+            // ======================================
+
             if (email.isEmpty()) {
-                etEmail.error = "Please enter your email"
+
+                etEmail.error =
+                    "Please enter your email"
+
                 etEmail.requestFocus()
+
                 return@setOnClickListener
             }
+
+            // ======================================
+            // VALIDATE PASSWORD
+            // ======================================
 
             if (password.isEmpty()) {
-                etPassword.error = "Please enter your password"
+
+                etPassword.error =
+                    "Please enter your password"
+
                 etPassword.requestFocus()
+
                 return@setOnClickListener
             }
 
-            // Firebase login
-            auth.signInWithEmailAndPassword(email, password)
+            // Disable login button
+            btnLogin.isEnabled = false
+            btnLogin.text = "LOGGING IN..."
+
+            // ======================================
+            // FIREBASE AUTHENTICATION
+            // ======================================
+
+            auth.signInWithEmailAndPassword(
+                email,
+                password
+            )
                 .addOnCompleteListener(this) { task ->
 
                     if (task.isSuccessful) {
 
-                        Toast.makeText(
-                            this,
-                            "Login successful!",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        // Get logged-in Firebase user
+                        val user =
+                            auth.currentUser
 
-                        val intent = Intent(
-                            this,
-                            CustomerHomeActivity::class.java
-                        )
+                        if (user == null) {
 
-                        startActivity(intent)
+                            btnLogin.isEnabled = true
+                            btnLogin.text = "LOGIN"
 
-                        finish()
+                            Toast.makeText(
+                                this,
+                                "Login failed. Please try again.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+
+                            return@addOnCompleteListener
+                        }
+
+                        // ==================================
+                        // CHECK USER ROLE
+                        // ==================================
+
+                        firestore
+                            .collection("customers")
+                            .document(user.uid)
+                            .get()
+
+                            .addOnSuccessListener { document ->
+
+                                if (document.exists()) {
+
+                                    // Get role from Firestore
+                                    val role =
+                                        document.getString("role")
+
+                                    // ==================================
+                                    // MANAGEMENT LOGIN
+                                    // ==================================
+
+                                    if (role == "MANAGER") {
+
+                                        Toast.makeText(
+                                            this,
+                                            "Management login successful!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+
+                                        val intent =
+                                            Intent(
+                                                this,
+                                                ManagementDashboardActivity::class.java
+                                            )
+
+                                        startActivity(intent)
+
+                                        finish()
+
+                                    }
+
+                                    // ==================================
+                                    // CUSTOMER LOGIN
+                                    // ==================================
+
+                                    else if (role == "CUSTOMER") {
+
+                                        Toast.makeText(
+                                            this,
+                                            "Login successful!",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+
+                                        val intent =
+                                            Intent(
+                                                this,
+                                                CustomerHomeActivity::class.java
+                                            )
+
+                                        startActivity(intent)
+
+                                        finish()
+
+                                    }
+
+                                    // ==================================
+                                    // UNKNOWN ROLE
+                                    // ==================================
+
+                                    else {
+
+                                        btnLogin.isEnabled = true
+                                        btnLogin.text = "LOGIN"
+
+                                        Toast.makeText(
+                                            this,
+                                            "User role is not recognized.",
+                                            Toast.LENGTH_LONG
+                                        ).show()
+                                    }
+
+                                } else {
+
+                                    btnLogin.isEnabled = true
+                                    btnLogin.text = "LOGIN"
+
+                                    Toast.makeText(
+                                        this,
+                                        "User profile not found.",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                }
+                            }
+
+                            .addOnFailureListener { exception ->
+
+                                btnLogin.isEnabled = true
+                                btnLogin.text = "LOGIN"
+
+                                Toast.makeText(
+                                    this,
+                                    "Could not check user role: ${exception.message}",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
 
                     } else {
+
+                        // ==================================
+                        // LOGIN FAILED
+                        // ==================================
+
+                        btnLogin.isEnabled = true
+                        btnLogin.text = "LOGIN"
 
                         Toast.makeText(
                             this,
@@ -79,13 +262,17 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
+        // ==========================================
         // REGISTER LINK
+        // ==========================================
+
         tvRegister.setOnClickListener {
 
-            val intent = Intent(
-                this,
-                RegisterActivity::class.java
-            )
+            val intent =
+                Intent(
+                    this,
+                    RegisterActivity::class.java
+                )
 
             startActivity(intent)
         }

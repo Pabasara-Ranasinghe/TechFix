@@ -1,112 +1,457 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/techfix_white"
-    android:padding="24dp">
 
-    <!-- App Logo -->
+    android:orientation="vertical"
+    android:background="@color/techfix_background">
 
-    <TextView
-        android:id="@+id/tvHomeLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TECHFIX"
-        android:textColor="@color/techfix_primary"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- ====================================== -->
+    <!-- MAIN SCROLLABLE CONTENT                -->
+    <!-- ====================================== -->
 
-    <!-- Welcome -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvHomeWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="Welcome to TechFix!"
-        android:textColor="@color/techfix_text"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHomeLogo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <!-- Description -->
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <TextView
-        android:id="@+id/tvHomeDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Computer and mobile phone repairs made easier."
-        android:textColor="@color/techfix_secondary_text"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHomeWelcome" />
 
-    <!-- Repair Services -->
+            <!-- ================================== -->
+            <!-- HEADER                             -->
+            <!-- ================================== -->
 
-    <Button
-        android:id="@+id/btnServices"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:backgroundTint="@color/techfix_primary"
-        android:text="REPAIR SERVICES"
-        android:textColor="@color/techfix_white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHomeDescription" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <!-- Appointments -->
+                <TextView
+                    android:id="@+id/tvHomeLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TECHFIX"
+                    android:textColor="@color/techfix_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnAppointments"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/techfix_secondary"
-        android:text="MY APPOINTMENTS"
-        android:textColor="@color/techfix_white"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnServices" />
+                <TextView
+                    android:id="@+id/tvHomeSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Computer &amp; Mobile Repair Services"
+                    android:textColor="@color/techfix_secondary_text"
+                    android:textSize="14sp" />
 
-    <!-- Repair History -->
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/btnHistory"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/techfix_light_yellow"
-        android:text="REPAIR HISTORY"
-        android:textColor="@color/techfix_text"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAppointments" />
 
-    <!-- Branches -->
+            <!-- ================================== -->
+            <!-- HERO CARD                          -->
+            <!-- ================================== -->
 
-    <Button
-        android:id="@+id/btnBranches"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/techfix_light_pink"
-        android:text="BRANCHES &amp; LOCATIONS"
-        android:textColor="@color/techfix_text"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnHistory" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                app:cardBackgroundColor="@color/techfix_primary"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="4dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EXPRESS WORKSHOP"
+                        android:textColor="@color/techfix_white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Smart Repairs, Done Right"
+                        android:textColor="@color/techfix_white"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Genuine replacement parts • Certified technicians"
+                        android:textColor="@color/techfix_white"
+                        android:textSize="13sp" />
+
+                    <Button
+                        android:id="@+id/btnHeroBookRepair"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:backgroundTint="@color/techfix_white"
+                        android:text="BOOK A REPAIR"
+                        android:textColor="@color/techfix_primary"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ================================== -->
+            <!-- EXPLORE SERVICES                   -->
+            <!-- ================================== -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Explore Services"
+                android:textColor="@color/techfix_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <!-- Category buttons -->
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <!-- ALL -->
+
+                    <Button
+                        android:id="@+id/btnCategoryAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/techfix_primary"
+                        android:text="ALL"
+                        android:textColor="@color/techfix_white"
+                        android:textStyle="bold" />
+
+
+                    <!-- PHONES -->
+
+                    <Button
+                        android:id="@+id/btnCategoryPhones"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/techfix_primary"
+                        android:text="PHONES"
+                        android:textColor="@color/techfix_white"
+                        android:textStyle="bold" />
+
+
+                    <!-- PC / MAC -->
+
+                    <Button
+                        android:id="@+id/btnCategoryPC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/techfix_primary"
+                        android:text="PC / MAC"
+                        android:textColor="@color/techfix_white"
+                        android:textStyle="bold" />
+
+
+                    <!-- SCREENS -->
+
+                    <Button
+                        android:id="@+id/btnCategoryScreens"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/techfix_primary"
+                        android:text="SCREENS"
+                        android:textColor="@color/techfix_white"
+                        android:textStyle="bold" />
+
+
+                    <!-- BATTERY -->
+
+                    <Button
+                        android:id="@+id/btnCategoryBattery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:backgroundTint="@color/techfix_primary"
+                        android:text="BATTERY"
+                        android:textColor="@color/techfix_white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <!-- ================================== -->
+            <!-- AVAILABLE SERVICES                 -->
+            <!-- ================================== -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Available Repair Services"
+                android:textColor="@color/techfix_text"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <!-- ================================== -->
+            <!-- LAPTOP DIAGNOSTICS CARD            -->
+            <!-- ================================== -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardLaptopDiagnostics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardBackgroundColor="@color/techfix_white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="17dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Laptop Diagnostics"
+                        android:textColor="@color/techfix_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="PC / MAC"
+                        android:textColor="@color/techfix_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Full diagnostic &amp; repair"
+                        android:textColor="@color/techfix_secondary_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="★ 4.8    ✓ 30-Day Warranty"
+                        android:textColor="@color/techfix_secondary_text"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Rs. 3,000"
+                            android:textColor="@color/techfix_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnLaptopBookNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/techfix_primary"
+                            android:text="BOOK NOW"
+                            android:textColor="@color/techfix_white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- ================================== -->
+            <!-- MOBILE SCREEN REPAIR CARD          -->
+            <!-- ================================== -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMobileScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/techfix_white"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="17dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile Screen Repair"
+                        android:textColor="@color/techfix_text"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="PHONES"
+                        android:textColor="@color/techfix_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Professional screen replacement"
+                        android:textColor="@color/techfix_secondary_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="★ 4.9    ✓ 30-Day Warranty"
+                        android:textColor="@color/techfix_secondary_text"
+                        android:textSize="13sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="From Rs. 5,000"
+                            android:textColor="@color/techfix_primary"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/btnMobileBookNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/techfix_primary"
+                            android:text="BOOK NOW"
+                            android:textColor="@color/techfix_white"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <!-- ====================================== -->
+    <!-- BOTTOM NAVIGATION                     -->
+    <!-- ====================================== -->
+
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/techfix_white"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnNavHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/techfix_white"
+            android:text="⌂&#10;Home"
+            android:textColor="@color/techfix_primary"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnNavBookings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/techfix_white"
+            android:text="▣&#10;Bookings"
+            android:textColor="@color/techfix_secondary_text"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnNavMap"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/techfix_white"
+            android:text="⌖&#10;Map"
+            android:textColor="@color/techfix_secondary_text"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btnNavProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/techfix_white"
+            android:text="●&#10;Profile"
+            android:textColor="@color/techfix_secondary_text"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

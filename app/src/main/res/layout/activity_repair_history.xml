@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Repair History Screen
+
+    This screen will display the customer's
+    previously completed repair services.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/techfix_white"
+    android:padding="20dp">
+
+    <!-- ========================================= -->
+    <!-- TECHFIX LOGO                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvHistoryLogo"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="TECHFIX"
+        android:textColor="@color/techfix_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- ========================================= -->
+    <!-- SCREEN TITLE                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvHistoryTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="28dp"
+
+        android:text="Repair History"
+        android:textColor="@color/techfix_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryLogo" />
+
+
+    <!-- ========================================= -->
+    <!-- DESCRIPTION                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvHistorySubtitle"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="6dp"
+
+        android:text="View your previously completed repair services."
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="15sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryTitle" />
+
+
+    <!-- ========================================= -->
+    <!-- REPAIR HISTORY LIST                       -->
+    <!-- ========================================= -->
+
+    <!--
+        RecyclerView displays multiple repair history
+        records in a scrollable list.
+    -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHistory"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="20dp"
+        android:clipToPadding="false"
+        android:paddingBottom="10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHistorySubtitle" />
+
+
+    <!-- ========================================= -->
+    <!-- NO HISTORY MESSAGE                       -->
+    <!-- ========================================= -->
+
+    <!--
+        This message is displayed when the customer
+        has no completed repairs.
+    -->
+
+    <TextView
+        android:id="@+id/tvNoHistory"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="No repair history found."
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="16sp"
+
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="@id/recyclerHistory"
+        app:layout_constraintEnd_toEndOf="@id/recyclerHistory"
+        app:layout_constraintStart_toStartOf="@id/recyclerHistory"
+        app:layout_constraintTop_toTopOf="@id/recyclerHistory" />
+
+
+    <!-- ========================================= -->
+    <!-- LOADING INDICATOR                         -->
+    <!-- ========================================= -->
+
+    <!--
+        Shows while Firestore data is loading.
+    -->
+
+    <ProgressBar
+        android:id="@+id/progressHistory"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="@id/recyclerHistory"
+        app:layout_constraintEnd_toEndOf="@id/recyclerHistory"
+        app:layout_constraintStart_toStartOf="@id/recyclerHistory"
+        app:layout_constraintTop_toTopOf="@id/recyclerHistory" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

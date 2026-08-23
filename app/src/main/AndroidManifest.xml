@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
@@ -9,35 +8,74 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TechFix">
-
         <activity
-            android:name=".CustomerHomeActivity"
+            android:name=".MyBookingsActivity"
             android:exported="false" />
-
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-
+            android:name=".ManagementDashboardActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Main Activity -->
+        <!-- ========================================= -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
 
+            <!-- App launcher -->
             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-                <action
-                    android:name="android.intent.action.MAIN" />
-
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-        </activity>
-
+        </activity> <!-- ========================================= -->
+        <!-- Login Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Register Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Customer Home Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".CustomerHomeActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Repair Services Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".RepairServicesActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Book Repair Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".BookRepairActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- My Appointments Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".MyAppointmentsActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Repair History Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".RepairHistoryActivity"
+            android:exported="false" /> <!-- ========================================= -->
+        <!-- Branches & Locations Activity -->
+        <!-- ========================================= -->
+        <activity
+            android:name=".BranchesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageAppointmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageTechniciansActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ManageSparePartsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

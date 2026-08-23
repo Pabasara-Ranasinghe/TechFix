@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    TechFix Branches & Locations Screen
+
+    Displays the two TechFix branches:
+    1. Colombo Branch
+    2. Galle Branch
+
+    Each branch has a button that will later
+    open its location in Google Maps.
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/techfix_white"
+    android:padding="20dp">
+
+
+    <!-- ========================================= -->
+    <!-- TECHFIX LOGO                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvBranchesLogo"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="TECHFIX"
+        android:textColor="@color/techfix_primary"
+        android:textSize="28sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- ========================================= -->
+    <!-- SCREEN TITLE                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvBranchesTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="25dp"
+
+        android:text="Our Branches"
+        android:textColor="@color/techfix_text"
+        android:textSize="26sp"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBranchesLogo" />
+
+
+    <!-- ========================================= -->
+    <!-- DESCRIPTION                              -->
+    <!-- ========================================= -->
+
+    <TextView
+        android:id="@+id/tvBranchesDescription"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="6dp"
+
+        android:text="Visit one of our TechFix branches for professional repair services."
+        android:textColor="@color/techfix_secondary_text"
+        android:textSize="15sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBranchesTitle" />
+
+
+    <!-- ========================================= -->
+    <!-- COLOMBO BRANCH CARD                       -->
+    <!-- ========================================= -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardColombo"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="25dp"
+
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvBranchesDescription">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Branch name -->
+
+            <TextView
+                android:id="@+id/tvColomboTitle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Colombo Branch"
+                android:textColor="@color/techfix_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Address -->
+
+            <TextView
+                android:id="@+id/tvColomboAddress"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+
+                android:text="Colombo, Sri Lanka"
+                android:textColor="@color/techfix_text"
+                android:textSize="15sp" />
+
+            <!-- Phone -->
+
+            <TextView
+                android:id="@+id/tvColomboPhone"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="6dp"
+
+                android:text="Contact: 011 234 5678"
+                android:textColor="@color/techfix_secondary_text"
+                android:textSize="15sp" />
+
+            <!-- Google Maps button -->
+
+            <Button
+                android:id="@+id/btnColomboMap"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:backgroundTint="@color/techfix_primary"
+
+                android:text="VIEW ON MAP"
+                android:textColor="@color/techfix_white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- ========================================= -->
+    <!-- GALLE BRANCH CARD                         -->
+    <!-- ========================================= -->
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardGalle"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+
+        app:cardCornerRadius="16dp"
+        app:cardElevation="5dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardColombo">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <!-- Branch name -->
+
+            <TextView
+                android:id="@+id/tvGalleTitle"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Galle Branch"
+                android:textColor="@color/techfix_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Address -->
+
+            <TextView
+                android:id="@+id/tvGalleAddress"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="8dp"
+
+                android:text="Galle, Sri Lanka"
+                android:textColor="@color/techfix_text"
+                android:textSize="15sp" />
+
+            <!-- Phone -->
+
+            <TextView
+                android:id="@+id/tvGallePhone"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="6dp"
+
+                android:text="Contact: 091 234 5678"
+                android:textColor="@color/techfix_secondary_text"
+                android:textSize="15sp" />
+
+            <!-- Google Maps button -->
+
+            <Button
+                android:id="@+id/btnGalleMap"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="12dp"
+
+                android:backgroundTint="@color/techfix_secondary"
+
+                android:text="VIEW ON MAP"
+                android:textColor="@color/techfix_white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,32 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TechFix">
 
-        <!-- ========================================= -->
-        <!-- Map Activity -->
-        <!-- ========================================= -->
-
-        <activity
-            android:name=".MapActivity"
-            android:exported="false" />
 
         <!-- ========================================= -->
-        <!-- My Bookings Activity -->
-        <!-- ========================================= -->
-
-        <activity
-            android:name=".MyBookingsActivity"
-            android:exported="false" />
-
-        <!-- ========================================= -->
-        <!-- Management Dashboard -->
-        <!-- ========================================= -->
-
-        <activity
-            android:name=".ManagementDashboardActivity"
-            android:exported="false" />
-
-        <!-- ========================================= -->
-        <!-- Main Activity -->
+        <!-- MAIN ACTIVITY                            -->
         <!-- ========================================= -->
 
         <activity
@@ -54,93 +31,110 @@
 
         </activity>
 
+
         <!-- ========================================= -->
-        <!-- Login Activity -->
+        <!-- AUTHENTICATION                           -->
         <!-- ========================================= -->
 
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
 
-        <!-- ========================================= -->
-        <!-- Register Activity -->
-        <!-- ========================================= -->
-
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
 
+
         <!-- ========================================= -->
-        <!-- Customer Home -->
+        <!-- CUSTOMER                                 -->
         <!-- ========================================= -->
 
         <activity
             android:name=".CustomerHomeActivity"
             android:exported="false" />
 
-        <!-- ========================================= -->
-        <!-- Repair Services -->
-        <!-- ========================================= -->
-
         <activity
             android:name=".RepairServicesActivity"
             android:exported="false" />
-
-        <!-- ========================================= -->
-        <!-- Book Repair -->
-        <!-- ========================================= -->
 
         <activity
             android:name=".BookRepairActivity"
             android:exported="false" />
 
-        <!-- ========================================= -->
-        <!-- My Appointments -->
-        <!-- ========================================= -->
-
         <activity
             android:name=".MyAppointmentsActivity"
             android:exported="false" />
 
-        <!-- ========================================= -->
-        <!-- Repair History -->
-        <!-- ========================================= -->
+        <activity
+            android:name=".MyBookingsActivity"
+            android:exported="false" />
 
         <activity
             android:name=".RepairHistoryActivity"
             android:exported="false" />
 
-        <!-- ========================================= -->
-        <!-- Branches -->
-        <!-- ========================================= -->
-
         <activity
             android:name=".BranchesActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+
+
         <!-- ========================================= -->
-        <!-- Management - Appointments -->
+        <!-- MANAGEMENT DASHBOARD                    -->
+        <!-- ========================================= -->
+
+        <activity
+            android:name=".ManagementDashboardActivity"
+            android:exported="false" />
+
+
+        <!-- ========================================= -->
+        <!-- MANAGEMENT - APPOINTMENTS                -->
         <!-- ========================================= -->
 
         <activity
             android:name=".ManageAppointmentsActivity"
             android:exported="false" />
 
+
         <!-- ========================================= -->
-        <!-- Management - Technicians -->
+        <!-- MANAGEMENT - TECHNICIANS                 -->
         <!-- ========================================= -->
 
         <activity
             android:name=".ManageTechniciansActivity"
             android:exported="false" />
 
+
         <!-- ========================================= -->
-        <!-- Management - Spare Parts -->
+        <!-- MANAGEMENT - SPARE PARTS                 -->
         <!-- ========================================= -->
 
         <activity
             android:name=".ManageSparePartsActivity"
             android:exported="false" />
+
+
+        <!-- ========================================= -->
+        <!-- MANAGEMENT - REPAIR PRICES               -->
+        <!-- ========================================= -->
+
+        <activity
+            android:name=".ManageRepairPricesActivity"
+            android:exported="false" />
+
+
+        <!-- ========================================= -->
+        <!-- MANAGEMENT - PAYMENTS                    -->
+        <!-- ========================================= -->
+
+        <activity
+            android:name=".ManagePaymentsActivity"
+            android:exported="false" />
+
 
     </application>
 

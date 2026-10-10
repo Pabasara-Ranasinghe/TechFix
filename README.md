@@ -183,7 +183,7 @@ Before running the project, install:
 ### Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/Pabasara-Ranasinghe/TechFix
 ```
 
 ### Open the Project

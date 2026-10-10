@@ -66,23 +66,15 @@ Customers can open the branch location directly through Google Maps.
 | GitHub                  | Source code management          |
 
 
-<table>
-  <tr>
-    <td bgcolor="#000000" style="padding: 1px;">
-      <img width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 18" src="https://github.com/user-attachments/assets/0d417969-c0ff-4bda-b777-22aaeb010b09" />
-    </td>
-  </tr>
-</table>
-
-
-<table>
-  <tr>
-    <td bgcolor="#000000" style="padding: 1px;">
-      <img width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 20 (1)" src="https://github.com/user-attachments/assets/ab19e2a5-3299-42b3-bdec-7597e5b5251b"" />
-    </td>
-  </tr>
-</table>
-
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/0d417969-c0ff-4bda-b777-22aaeb010b09" width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 18"/></td>
+      <td><img src="https://github.com/user-attachments/assets/ab19e2a5-3299-42b3-bdec-7597e5b5251b" width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 20 (1)"/></td>
+      <td><img src="https://github.com/user-attachments/assets/b4912d7f-1155-49e6-bbc4-a6ec12657922" width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 19"/></td>
+    </tr>
+  </table>
+</div>
 
 
 

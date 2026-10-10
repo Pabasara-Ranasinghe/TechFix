@@ -53,18 +53,6 @@ The application currently supports TechFix branches in:
 
 Customers can open the branch location directly through Google Maps.
 
-## 🛠️ Technologies Used
-
-| Technology              | Purpose                         |
-| ----------------------- | ------------------------------- |
-| Kotlin                  | Android application development |
-| Android Studio          | Development environment         |
-| Android SDK             | Android development             |
-| XML                     | User interface layouts          |
-| Firebase Authentication | User authentication             |
-| Git                     | Version control                 |
-| GitHub                  | Source code management          |
-
 
 <div align="center">
   <table>
@@ -86,6 +74,19 @@ Customers can open the branch location directly through Google Maps.
     </tr>
   </table>
 </div>
+
+
+## 🛠️ Technologies Used
+
+| Technology              | Purpose                         |
+| ----------------------- | ------------------------------- |
+| Kotlin                  | Android application development |
+| Android Studio          | Development environment         |
+| Android SDK             | Android development             |
+| XML                     | User interface layouts          |
+| Firebase Authentication | User authentication             |
+| Git                     | Version control                 |
+| GitHub                  | Source code management          |
 
 
 ## 📂 Project Structure

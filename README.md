@@ -65,7 +65,14 @@ Customers can open the branch location directly through Google Maps.
 | Git                     | Version control                 |
 | GitHub                  | Source code management          |
 
- <img width="360" height="700" alt="WhatsApp Image 2026-10-10 at 10 19 18" src="https://github.com/user-attachments/assets/0d417969-c0ff-4bda-b777-22aaeb010b09" style="border: 1px solid #000000;" /> 
+
+<table>
+  <tr>
+    <td bgcolor="#000000" style="padding: 1px;">
+      <img width="180" height="350" alt="WhatsApp Image 2026-10-10 at 10 19 18" src="https://github.com/user-attachments/assets/0d417969-c0ff-4bda-b777-22aaeb010b09" />
+    </td>
+  </tr>
+</table>
 
 
 
